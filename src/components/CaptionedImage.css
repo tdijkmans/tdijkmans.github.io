@@ -1,0 +1,11 @@
+.custom-image {
+    margin-top: var(--spacing-small);
+    height: auto;
+}
+
+.custom-image__caption {
+    margin: var(--spacing-x-small) 0;
+    font-size: var(--font-size-x-small);
+    font-family: var(--font-family-body), sans-serif;
+    width: max-content;
+}

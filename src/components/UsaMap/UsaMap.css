@@ -1,0 +1,36 @@
+.state-group {
+    cursor: pointer;
+    transition: fill 0.3s ease;
+}
+
+.state-group.hovered {
+    z-index: 1;
+    filter: drop-shadow(0 0 5px #fff);
+    transform: translateX(1px) translateY(-1px);
+}
+
+.usa-map {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #ccc;
+}
+
+.usa-map svg {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.usa-map__title {
+    font-size: var(--font-size-large);
+    margin-bottom: var(--spacing-medium);
+    border-bottom: 1px solid var(--border-separator-line);
+}

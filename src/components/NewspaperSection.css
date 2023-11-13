@@ -1,0 +1,5 @@
+.newspaper-section {
+    padding-bottom: var(--spacing-small);
+    margin-top: var(--spacing-medium);
+    border-bottom: 1px solid var(--border-separator-line);
+}
