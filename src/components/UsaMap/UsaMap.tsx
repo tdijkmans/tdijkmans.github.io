@@ -39,7 +39,7 @@ function UsaMap(props: SVGProps<SVGSVGElement>) {
         )
     }
 
-    const sortedStates = states?.sort((a, b) =>
+    const sortedStates = states?.sort((a) =>
         hooveredState?.id === a.id ? 1 : -1
     )
 

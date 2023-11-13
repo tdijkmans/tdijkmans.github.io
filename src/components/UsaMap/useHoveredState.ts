@@ -28,7 +28,7 @@ export const useHoveredState = () => {
     const handleMouseLeave = (
         e: React.MouseEvent<SVGPathElement, MouseEvent>
     ) => {
-        const id = e.currentTarget.getAttribute('data-id')
+        e.currentTarget.getAttribute('data-id')
     }
 
     return { hooveredState, handleMouseEnter, handleMouseLeave }
