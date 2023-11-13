@@ -1,5 +1,5 @@
 import { H2, LI, UL } from '../../components/Typography'
-import './TopstoryList.css'
+import './TopStoryList.css'
 
 export default function TopstoryList() {
     return (
