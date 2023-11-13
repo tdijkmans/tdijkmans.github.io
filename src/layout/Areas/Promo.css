@@ -1,0 +1,7 @@
+.promo-area > h3 {
+    font-size: var(--font-size-medium);
+    text-transform: uppercase;
+    margin-bottom: var(--spacing-small);
+    color: var(--emphasis-color);
+    font-weight: var(--font-weight-regular);
+}

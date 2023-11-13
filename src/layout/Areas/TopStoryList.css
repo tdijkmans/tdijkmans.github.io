@@ -1,0 +1,22 @@
+.top-stories {
+    margin-top: var(--spacing-x-large);
+}
+
+.top-stories__list {
+    margin-top: var(--spacing-large);
+}
+
+.top-stories__item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px dotted var(--border-separator-line);
+    padding-bottom: var(--spacing-x-small);
+    margin-bottom: var(--spacing-small);
+}
+
+.top-stories__item > span {
+    margin-left: var(--spacing-small);
+    font-size: var(--font-size-small);
+    font-style: italic;
+}

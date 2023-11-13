@@ -1,0 +1,39 @@
+.custom-h1 {
+    font-family: var(--font-family-headline), sans-serif;
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-xx-large);
+    color: var(--text-dark);
+}
+
+.custom-h2 {
+    font-family: var(--font-family-headline), sans-serif;
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-medium);
+}
+
+.custom-h3 {
+    font-family: var(--font-family-headline), sans-serif;
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-small);
+}
+
+.custom-p,
+.custom-body {
+    font-family: var(--font-family-body), sans-serif;
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-size-medium);
+}
+
+.custom-a {
+    color: var(--hyperlink-color);
+}
+
+.custom-li {
+    font-family: var(--font-family-body), sans-serif;
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-size-medium);
+}
+
+.custom-ul {
+    list-style: none;
+}

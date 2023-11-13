@@ -1,0 +1,8 @@
+.usa-map__live-results {
+    margin-top: var(--spacing-medium);
+    margin-bottom: var(--spacing-xx-small);
+    font-size: var(--font-size-small);
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-small);
+}
