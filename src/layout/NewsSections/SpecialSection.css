@@ -1,0 +1,14 @@
+.special-section--link {
+    margin-left: var(--spacing-x-small);
+    color: var(--hyperlink-color);
+    font-size: var(--font-size-small);
+}
+
+.special-section--title {
+    font-size: var(--font-size-large);
+    margin-bottom: var(--spacing-medium);
+    border-bottom: 1px solid var(--border-separator-line);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}

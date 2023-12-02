@@ -107,6 +107,13 @@ img {
     --border-separator-line: #a19377;
     --icon-color: #333333;
     --emphasis-color: #d9bf77;
+
+    /* Game Colors */
+    --color-republican: #e04b1a;
+    --color-democrat: #0044c9;
+    --color-undecided: #9e9e9e;
+
+
 }
 
 .material-symbols-outlined {

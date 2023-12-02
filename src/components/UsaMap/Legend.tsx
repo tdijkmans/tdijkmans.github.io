@@ -5,11 +5,11 @@ export default function Legend() {
     const items = [
         {
             color: '#e04b1a',
-            label: 'Republikeins',
+            label: 'Republikeinen',
         },
         {
             color: '#0044c9',
-            label: 'Democratisch',
+            label: 'Democraten',
         },
         {
             color: 'grey',
