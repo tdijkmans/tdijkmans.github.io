@@ -6,7 +6,8 @@ import {
 } from "react-router-dom";
 import './index.css';
 import PowerplaySecion from './routes/Powerplay';
-import Root from './routes/root';
+import Root from './routes/Root';
+
 
 
 const router = createBrowserRouter(

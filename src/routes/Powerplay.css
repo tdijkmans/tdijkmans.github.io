@@ -10,32 +10,17 @@
 
 .div1 {
     grid-area: 1 / 1 / 2 / 2;
-    margin-left: var(--spacing-large);
-    margin-top: var(--spacing-large);
+    margin-left: var(--spacing-x-small);
+    margin-top: var(--spacing-x-small);
     border: 1px solid #ccc;
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
-    padding: var(--spacing-large);
+    padding: var(--spacing-medium);
     background: #fff;
-    width: 50%;
-    height: 50%;
-    display: flex;
+
 }
 
 
-.div1 button {
-    font-size: var(--font-size-small);
-    font-weight: var(--font-weight-bold);
-    font-family: var(--font-family-body);
-    color: var(--body-color);
-    background: #fff;
-    border: 1px solid #ccc;
-    border-radius: var(--border-radius);
-    padding: var(--spacing-x-small);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin: var(--spacing-xx-small);
-}
 
 
 .div2 {
@@ -85,4 +70,43 @@
     margin-top: var(--spacing-large);
     text-transform: uppercase;
     text-decoration: underline;
+}
+
+.board--zoom {}
+
+.board--zoom__label {
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-bold);
+    font-family: var(--font-family-body);
+    margin-bottom: var(--spacing-medium);
+    margin-left: var(--spacing-medium);
+}
+
+.board--zoom button {
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-bold);
+    font-family: var(--font-family-body);
+    color: var(--body-color);
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+    padding: var(--spacing-x-small);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: var(--spacing-xx-small);
+    z-index: 1000;
+}
+
+.board--zoom button:hover {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+.board--zoom button:active {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+.board--zoom button:focus {
+    outline: none;
 }
