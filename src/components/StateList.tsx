@@ -1,11 +1,17 @@
 import React from 'react'
-import { getPartyColor } from '../utilities'
-import { stateData } from './Powerplay/usaStates'
 import './StateList.css'
+import { stateData } from './UsaMap/usaStates'
 
 
-
-
+const getPartyColor = (party: string) => {
+    if (party === 'republican') {
+        return '#e04b1a'
+    } else if (party === 'democrat') {
+        return '#0044c9'
+    } else {
+        return 'grey'
+    }
+}
 
 export default function StateList() {
     const stateList = stateData.map((s) => ({ ...s, fill: getPartyColor(s.party) }))

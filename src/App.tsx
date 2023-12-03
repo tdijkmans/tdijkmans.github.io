@@ -1,3 +1,4 @@
+import './App.css'
 import Footer from './layout/Areas/Footer'
 import { Header } from './layout/Areas/Header'
 import Main from './layout/Areas/Main'
