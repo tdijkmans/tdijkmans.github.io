@@ -1,6 +1,6 @@
 import { SVGProps, useState } from 'react'
-import { useGameScore } from '../../hooks/useGameScore'
-import { useScale } from '../../hooks/useScale'
+import { useZoom } from '../../hooks/useZoom'
+import useGlobalStore from '../../store'
 import { getPartyColor } from '../../utilities'
 import ContextMenu from '../ContextMenu'
 import MapContours from './MapContours'
@@ -18,18 +18,10 @@ function UsaBoard(props: SVGProps<SVGSVGElement>) {
     const { handleMouseEnter, handleMouseLeave, hooveredState } = useHoveredState()
     const [states, setStates] = useState(initialStates)
     const [clickedState, setClickedState] = useState({} as IUsaState)
-    const { winAState } = useGameScore()
+    const winAState = useGlobalStore((state) => state.winAState)
     const sortedStates = states?.sort((a) => hooveredState?.id === a.id ? 1 : -1)
-
-    const { scale, handleWheel } = useScale()
-
-
-    const showContextMenu = (e: React.MouseEvent<SVGPathElement, MouseEvent>) => {
-        e.preventDefault();
-        setContextMenuVisible(true);
-        setContextMenuPosition({ top: e.clientY - 250, left: e.clientX - 250 });
-    };
-
+    const scale = useZoom(((state) => state.scale))
+    const handleWheel = useZoom(state => state.handleWheel)
     const hideContextMenu = () => { setContextMenuVisible(false); };
 
     const handleOptionClick = (option: Party) => {
@@ -39,19 +31,17 @@ function UsaBoard(props: SVGProps<SVGSVGElement>) {
         setStates(updatedStates)
     };
 
-    const handleClick = (e: React.MouseEvent<SVGPathElement, MouseEvent>) => {
-        const id = e.currentTarget.getAttribute('data-id')
-        setClickedState(states.find((s) => s.id === id) || {} as IUsaState)
+    const showContextMenu = (e: React.MouseEvent<SVGElement, MouseEvent>) => {
+        e.preventDefault();
+        const id = e.currentTarget.getAttribute('data-id');
+        setClickedState(states.find((s) => s.id === id) || {} as IUsaState);
         setId(id as string);
-        showContextMenu(e);
-    }
+        setContextMenuVisible(true);
+        setContextMenuPosition({ top: e.clientY - 250, left: e.clientX - 250 });
+    };
 
     return (
         <>
-
-
-
-
             <svg
                 onWheel={handleWheel}
                 className="board"
@@ -77,7 +67,7 @@ function UsaBoard(props: SVGProps<SVGSVGElement>) {
                         <path
                             id={state.id}
                             key={state.id}
-                            onClick={handleClick}
+                            onClick={showContextMenu}
                             onMouseEnter={handleMouseEnter}
                             onMouseLeave={handleMouseLeave}
                             d={state.d}

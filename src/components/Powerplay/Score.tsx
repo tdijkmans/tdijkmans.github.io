@@ -1,27 +1,25 @@
-import { useEffect } from 'react'
-import { useGameScore } from '../../hooks/useGameScore'
+import useGlobalStore from '../../store'
 import { getPartyColor } from '../../utilities'
 import './Score.css'
 
 export default function Score() {
-    const { getRepulicanScore, getDemocratScore, grandTotal } = useGameScore()
-
-    useEffect(() => {
-        console.log('score')
-    }
-        , [getRepulicanScore, getDemocratScore, grandTotal])
-
+    const republicanScore = useGlobalStore((state) => state.score.republican)
+    const democratScore = useGlobalStore((state) => state.score.democrat)
+    const grandTotal = useGlobalStore((state) => state.grandTotal)
+    const republicanProgress = useGlobalStore((state) => state.getRepublicanProgress)
+    const democratProgress = useGlobalStore((state) => state.getDemocratProgress)
 
     const items = [
         {
             color: getPartyColor('republican'),
             label: 'Republikeinen',
-            score: getRepulicanScore(),
+            score: `${republicanScore} (${republicanProgress()}%)`,
+
         },
         {
             color: getPartyColor('democrat'),
             label: 'Democraten',
-            score: getDemocratScore(),
+            score: `${democratScore} (${democratProgress()}%)`,
         },
         {
             color: getPartyColor('swing'),
@@ -38,9 +36,6 @@ export default function Score() {
         key: `legend-${item.label}`,
 
     }))
-
-
-
 
     return (
         <div className="score">
@@ -61,7 +56,6 @@ export default function Score() {
                     <div className="score-item--score">{item.score}</div>
                 </div>
             ))}
-
         </div>
 
     )

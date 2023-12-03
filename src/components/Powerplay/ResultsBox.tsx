@@ -1,3 +1,4 @@
+import { getPartyColor } from '../../utilities'
 import { P } from '../Typography'
 import './ResultsBox.css'
 import { IUsaState } from './usaStates'
@@ -14,10 +15,7 @@ export default function ResultsBox({
                     style={{
                         width: '20px',
                         height: '20px',
-                        backgroundColor:
-                            hooveredState.party === 'republican'
-                                ? '#e04b1a'
-                                : '#0044c9',
+                        backgroundColor: getPartyColor(hooveredState.party),
                     }}
                 ></div>
                 <P>
